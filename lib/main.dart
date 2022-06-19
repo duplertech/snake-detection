@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'material_design_indicator.dart';
+import 'package:snake_detection/faq.dart';
+import 'package:snake_detection/icons.dart';
+import 'package:snake_detection/scan.dart';
+import 'package:snake_detection/search.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,25 +28,9 @@ class HomeBar extends StatefulWidget {
 }
 
 class _HomeBarState extends State<HomeBar> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 0;
 
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Search',
-      style: optionStyle,
-    ),
-    Text(
-      'Scan',
-      style: optionStyle,
-    ),
-    Text(
-      'Info',
-      style: optionStyle,
-    ),
-  ];
+  static const List<Widget> _widgetOptions = <Widget>[Search(), Scan(), FAQ()];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -66,15 +53,14 @@ class _HomeBarState extends State<HomeBar> {
             ),
           ),
         ),
-        body: Center(
-          child: _widgetOptions.elementAt(_selectedIndex),
-        ),
+        body: _widgetOptions.elementAt(_selectedIndex),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-            BottomNavigationBarItem(icon: Icon(Icons.flip), label: 'Scan'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.info_outline), label: 'FAQ'),
+                icon: Icon(CustomIcons.search), label: 'Search'),
+            BottomNavigationBarItem(
+                icon: Icon(CustomIcons.scan), label: 'Scan'),
+            BottomNavigationBarItem(icon: Icon(CustomIcons.faq), label: 'FAQ'),
           ],
           showSelectedLabels: false,
           showUnselectedLabels: false,
