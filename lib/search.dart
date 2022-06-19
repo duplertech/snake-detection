@@ -157,14 +157,14 @@ class _SearchState extends State<Search> {
                                   'https://cdn.pixabay.com/photo/2014/08/15/21/40/snake-419043_960_720.jpg',
                                   fit: BoxFit.fitWidth, // set your height
                                   width: double.maxFinite,
-
-                                  height: 100, // and width here
+                                  height: 100,
+                                  // and width here
                                 )),
                           ),
                           const Text(
-                            'Royal Ball Python',
+                            'Royal African Copper',
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xFF323232)),
                           ),

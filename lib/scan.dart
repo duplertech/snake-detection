@@ -5,8 +5,18 @@ class Scan extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text(
-      'Scan',
-    );
+    return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
+        child: (Column(
+          children: const [
+            Text(
+              'Scan The Snake',
+              style: TextStyle(
+                  color: Color(0xFF323232),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500),
+            ),
+          ],
+        )));
   }
 }
