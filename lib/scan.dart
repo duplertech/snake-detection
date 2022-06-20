@@ -64,7 +64,7 @@ class _ScanState extends State<Scan> {
                               style: TextStyle(
                                   color: Color(0xFFFFFFFF),
                                   fontSize: 16,
-                                  fontWeight: FontWeight.w500),
+                                  fontWeight: FontWeight.bold),
                             ),
                           ),
                         ),

@@ -59,7 +59,7 @@ class _SearchState extends State<Search> {
             style: TextStyle(
                 color: Color(0xFF323232),
                 fontSize: 16,
-                fontWeight: FontWeight.w500),
+                fontWeight: FontWeight.bold),
           ),
           GestureDetector(
             onTap: () {
@@ -72,7 +72,7 @@ class _SearchState extends State<Search> {
               margin: const EdgeInsets.only(top: 10, bottom: 25),
               padding: const EdgeInsets.all(10),
               width: double.infinity,
-              height: 180,
+              height: 220,
               decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(
                   Radius.circular(10.0),
@@ -98,7 +98,7 @@ class _SearchState extends State<Search> {
                             'https://cdn.pixabay.com/photo/2014/08/15/21/40/snake-419043_960_720.jpg',
                             fit: BoxFit.fitWidth, // set your height
                             width: double.maxFinite,
-                            height: 100, // and width here
+                            height: 140, // and width here
                           )),
                     ),
                     const Text(
@@ -120,7 +120,7 @@ class _SearchState extends State<Search> {
             style: TextStyle(
                 color: Color(0xFF323232),
                 fontSize: 16,
-                fontWeight: FontWeight.w500),
+                fontWeight: FontWeight.bold),
           ),
           Container(
             // padding: const EdgeInsets.all(10.0),

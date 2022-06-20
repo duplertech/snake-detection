@@ -44,12 +44,12 @@ class DetailScreen extends StatelessWidget {
                       style: TextStyle(
                           color: Color(0xFF323232),
                           fontSize: 16,
-                          fontWeight: FontWeight.w500),
+                          fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
                 const SizedBox(
-                  height: 35,
+                  height: 20,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -99,7 +99,7 @@ class DetailScreen extends StatelessWidget {
                       )),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 10,
                 ),
                 const Text(
                   'Venomous',

@@ -15,7 +15,7 @@ class FAQ extends StatelessWidget {
             style: TextStyle(
                 color: Color(0xFF323232),
                 fontSize: 16,
-                fontWeight: FontWeight.w500),
+                fontWeight: FontWeight.bold),
           ),
           Container(
             width: double.infinity,
