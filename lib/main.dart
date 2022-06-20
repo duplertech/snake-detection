@@ -1,10 +1,21 @@
+import 'dart:async';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:snake_detection/faq.dart';
 import 'package:snake_detection/icons.dart';
 import 'package:snake_detection/scan.dart';
 import 'package:snake_detection/search.dart';
+import 'package:camera/camera.dart';
 
-void main() {
+List<CameraDescription> cameras = [];
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  try {
+    cameras = await availableCameras();
+  } on CameraException catch (e) {
+    print(e.code);
+  }
   runApp(const MyApp());
 }
 
