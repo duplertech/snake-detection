@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:snake_detection/detail.dart';
 import 'package:snake_detection/faq.dart';
 import 'package:snake_detection/icons.dart';
 import 'package:snake_detection/scan.dart';
@@ -39,7 +40,7 @@ class HomeBar extends StatefulWidget {
 }
 
 class _HomeBarState extends State<HomeBar> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 0;
 
   static const List<Widget> _widgetOptions = <Widget>[Search(), Scan(), FAQ()];
 
@@ -64,7 +65,8 @@ class _HomeBarState extends State<HomeBar> {
             ),
           ),
         ),
-        body: _widgetOptions.elementAt(_selectedIndex),
+        body: DetailScreen(),
+        // _widgetOptions.elementAt(_selectedIndex),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(

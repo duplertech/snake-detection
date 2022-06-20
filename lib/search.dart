@@ -80,7 +80,6 @@ class _SearchState extends State<Search> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(bottom: 10),
                     decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(
                       Radius.circular(10.0),
@@ -91,7 +90,6 @@ class _SearchState extends State<Search> {
                           'https://cdn.pixabay.com/photo/2014/08/15/21/40/snake-419043_960_720.jpg',
                           fit: BoxFit.fitWidth, // set your height
                           width: double.maxFinite,
-
                           height: 100, // and width here
                         )),
                   ),
@@ -145,12 +143,7 @@ class _SearchState extends State<Search> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Container(
-                            margin: const EdgeInsets.only(bottom: 10),
-                            decoration: const BoxDecoration(
-                                borderRadius: BorderRadius.all(
-                              Radius.circular(10.0),
-                            )),
+                          Expanded(
                             child: ClipRRect(
                                 borderRadius: BorderRadius.circular(10.0),
                                 child: Image.network(
@@ -161,12 +154,18 @@ class _SearchState extends State<Search> {
                                   // and width here
                                 )),
                           ),
+                          const SizedBox(
+                            height: 10,
+                          ),
                           const Text(
-                            'Royal African Copper',
+                            'Royal African Copper asdfasfadfadfadfadfasdfadfadsfadsfa',
                             style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xFF323232)),
+                          ),
+                          const SizedBox(
+                            height: 5,
                           ),
                           const Text(
                             'Venomous',

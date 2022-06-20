@@ -107,15 +107,16 @@ class _ScanState extends State<Scan> {
                             style: TextButton.styleFrom(
                               primary: Colors.white,
                               backgroundColor: const Color(0xFF2E5043),
-                              minimumSize: Size(80, 33),
-                              padding: EdgeInsets.symmetric(horizontal: 16.0),
+                              minimumSize: const Size(80, 33),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 16.0),
                               shape: const RoundedRectangleBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(50.0)),
                               ),
                             ),
                             onPressed: () {},
-                            child: Text('Predict'),
+                            child: const Text('Predict'),
                           )
                         ],
                       ),
