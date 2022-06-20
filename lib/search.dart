@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:snake_detection/detail.dart';
 import 'package:snake_detection/icons.dart';
 
 class Search extends StatefulWidget {
@@ -60,51 +61,59 @@ class _SearchState extends State<Search> {
                 fontSize: 16,
                 fontWeight: FontWeight.w500),
           ),
-          Container(
-            margin: const EdgeInsets.only(top: 10, bottom: 25),
-            padding: const EdgeInsets.all(10),
-            width: double.infinity,
-            height: 180,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(
-                Radius.circular(10.0),
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Color(0xFFF5F6F6),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const DetailScreen()),
+              );
+            },
+            child: Container(
+              margin: const EdgeInsets.only(top: 10, bottom: 25),
+              padding: const EdgeInsets.all(10),
+              width: double.infinity,
+              height: 180,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10.0),
                 ),
-              ],
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0xFFF5F6F6),
+                  ),
+                ],
+              ),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                        Radius.circular(10.0),
+                      )),
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10.0),
+                          child: Image.network(
+                            'https://cdn.pixabay.com/photo/2014/08/15/21/40/snake-419043_960_720.jpg',
+                            fit: BoxFit.fitWidth, // set your height
+                            width: double.maxFinite,
+                            height: 100, // and width here
+                          )),
+                    ),
+                    const Text(
+                      'Royal Ball Python',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF323232)),
+                    ),
+                    const Text(
+                      'Venomous',
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  ]),
             ),
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(
-                      Radius.circular(10.0),
-                    )),
-                    child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10.0),
-                        child: Image.network(
-                          'https://cdn.pixabay.com/photo/2014/08/15/21/40/snake-419043_960_720.jpg',
-                          fit: BoxFit.fitWidth, // set your height
-                          width: double.maxFinite,
-                          height: 100, // and width here
-                        )),
-                  ),
-                  const Text(
-                    'Royal Ball Python',
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF323232)),
-                  ),
-                  const Text(
-                    'Venomous',
-                    style: TextStyle(color: Colors.red),
-                  ),
-                ]),
           ),
           const Text(
             'Other Results',
@@ -127,51 +136,60 @@ class _SearchState extends State<Search> {
               ),
               itemCount: 21,
               itemBuilder: (context, index) {
-                return Container(
-                    padding: const EdgeInsets.all(5.0),
-                    decoration: const BoxDecoration(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10.0),
-                      ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0xFFF5F6F6),
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const DetailScreen()),
+                    );
+                  },
+                  child: Container(
+                      padding: const EdgeInsets.all(5.0),
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10.0),
                         ),
-                      ],
-                    ),
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Expanded(
-                            child: ClipRRect(
-                                borderRadius: BorderRadius.circular(10.0),
-                                child: Image.network(
-                                  'https://cdn.pixabay.com/photo/2014/08/15/21/40/snake-419043_960_720.jpg',
-                                  fit: BoxFit.fitWidth, // set your height
-                                  width: double.maxFinite,
-                                  height: 100,
-                                  // and width here
-                                )),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0xFFF5F6F6),
                           ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          const Text(
-                            'Royal African Copper asdfasfadfadfadfadfasdfadfadsfadsfa',
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFF323232)),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          const Text(
-                            'Venomous',
-                            style: TextStyle(color: Colors.red),
-                          ),
-                        ]));
+                        ],
+                      ),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Expanded(
+                              child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  child: Image.network(
+                                    'https://cdn.pixabay.com/photo/2014/08/15/21/40/snake-419043_960_720.jpg',
+                                    fit: BoxFit.fitWidth, // set your height
+                                    width: double.maxFinite,
+                                    height: 100,
+                                    // and width here
+                                  )),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            const Text(
+                              'Royal African Copper',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xFF323232)),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            const Text(
+                              'Venomous',
+                              style: TextStyle(color: Colors.red),
+                            ),
+                          ])),
+                );
               },
             ),
           ),

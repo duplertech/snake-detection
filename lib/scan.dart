@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+import 'package:snake_detection/detail.dart';
 import '../main.dart';
 
 class Scan extends StatefulWidget {
@@ -38,7 +39,7 @@ class _ScanState extends State<Scan> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       height: double.maxFinite,
       // height: MediaQuery.of(context).size.height - 00,
@@ -115,7 +116,13 @@ class _ScanState extends State<Scan> {
                                     BorderRadius.all(Radius.circular(50.0)),
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const DetailScreen()),
+                              );
+                            },
                             child: const Text('Predict'),
                           )
                         ],

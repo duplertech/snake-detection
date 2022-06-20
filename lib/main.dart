@@ -40,7 +40,7 @@ class HomeBar extends StatefulWidget {
 }
 
 class _HomeBarState extends State<HomeBar> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
   static const List<Widget> _widgetOptions = <Widget>[Search(), Scan(), FAQ()];
 
@@ -65,8 +65,7 @@ class _HomeBarState extends State<HomeBar> {
             ),
           ),
         ),
-        body: DetailScreen(),
-        // _widgetOptions.elementAt(_selectedIndex),
+        body: _widgetOptions.elementAt(_selectedIndex),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
